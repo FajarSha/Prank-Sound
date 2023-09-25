@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/topbar_gredient"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/back_arrow"
+            android:visibility="gone"
+
+            />
+
+        <TextView
+            style="@style/topBarHeadingBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/category_name"
+
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/inappBtn"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_alignParentEnd="true"
+            android:paddingEnd="@dimen/_4sdp"
+            android:src="@drawable/crown"
+
+            />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_prank_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar_layout"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="-1dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+
+        android:scaleType="fitXY"
+        android:src="@drawable/top_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_human"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_prank_sound"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/human_btn" />
+
+
+    <ImageView
+        android:id="@+id/iv_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_human"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/animal_btn" />
+
+    <ImageView
+        android:id="@+id/iv_machine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_animal"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/machine_btn" />
+
+    <FrameLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_below="@+id/iv_machine"
+
+        android:layout_marginTop="12dp"
+
+        android:background="@color/gray_lite"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="start"
+            android:background="@color/blue"
+            android:gravity="start"
+            android:padding="4dp"
+            android:text="Ad"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </FrameLayout>
+    <!-- <com.google.android.gms.ads.AdView
+         android:id="@+id/adView2"
+         android:layout_width="wrap_content"
+         android:layout_height="@dimen/_250sdp"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentBottom="true"
+         android:layout_marginTop="@dimen/_8sdp"
+         android:visibility="visible"
+         app:adSize="MEDIUM_RECTANGLE"
+         app:adUnitId="@string/banner_ad"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ad_layout"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/loading_ad"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pb_loading" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/exit_layout"
+            android:layout_width="match_parent"
+            android:gravity="bottom"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content">
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/exit_adview"
+                android:background="@color/black"
+                android:paddingVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/banner_ad" />
+            <TextView
+                android:text="AD"
+                android:textSize="12sp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:layout_alignTop="@+id/exit_adview"
+                android:textColor="@color/black"
+                android:background="@drawable/ad_keyword_back"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                />
+
+
+
+            <TextView
+                android:id="@+id/tv_exit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@color/black"
+                android:onClick="exitApp"
+                android:layout_below="@+id/exit_adview"
+                android:paddingVertical="@dimen/_16sdp"
+                android:text="@string/exit_screen"/>
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+     >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/adLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_marginBottom="16dp"
+
+            android:background="@color/gray_lite"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@color/blue"
+                android:text="AD"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Are you really want to exit?"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="75dp"
+
+            android:paddingEnd="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="20dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/yesBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FF8401"
+                    app:cardCornerRadius="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <TextView
+                        android:id="@+id/yesBTntxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="8dp"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Nobtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FF8401"
+                    app:cardCornerRadius="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <TextView
+                        android:id="@+id/nextBtntxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="8dp"
+                        android:text="No"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/txt_exit" />
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/img_exit"
+            app:layout_constraintBottom_toTopOf="@+id/layout"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:ignore="MissingConstraints">
+
+        </FrameLayout>
+
+        <!--       <FrameLayout
+                   android:id="@id/frames"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:background="@drawable/img_exit"
+                   app:layout_constraintBottom_toTopOf="@+id/layout"
+                   app:layout_constraintTop_toBottomOf="@+id/imageView2" />-->
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/adLayout1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/round_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="  Realistic Funny Sounds"
+
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:gravity="start"
+
+                android:orientation="horizontal"
+
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/round_img"
+                    app:tint="#ED383A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="  Funny Animal Sounds"
+
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:gravity="start"
+                android:orientation="horizontal"
+
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/round_img"
+
+                    app:tint="#37B349" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:text="  Prank Your Friends"
+
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inApp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/in_app"
+        android:visibility="gone"
+      >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/subscribeNow"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+
+
+            app:cardBackgroundColor="#52FF00"
+
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="?attr/actionBarSize"-->
+            <!--                android:orientation="vertical"></LinearLayout>-->
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="100dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="100dp"
+                android:paddingBottom="10dp"
+                android:text="Buy Now"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/crossbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="6dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_close_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

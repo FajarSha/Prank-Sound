@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CategoryActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBar_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/topbar_gredient"
+        android:layout_height="@dimen/_40sdp">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:padding="@dimen/_10sdp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_category"
+            style="@style/topBarHeadingBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:text="@string/category_name"
+            android:textColor="@color/white" />
+
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_category"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/adLayout"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar_layout"
+        app:spanCount="2"
+        tools:itemCount="6"
+
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        tools:listitem="@layout/category_list_item" />
+
+    <FrameLayout
+        android:id="@+id/adLayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/gray_lite"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@color/blue"
+            android:padding="2dp"
+            android:text="Ads"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintTop_toTopOf="@+id/adLayout"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+    </FrameLayout>
+
+
+   <!-- <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="visible"
+        app:adSize="BANNER"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

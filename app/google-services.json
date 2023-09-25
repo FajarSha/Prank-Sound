@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "825311866885",
+    "project_id": "haircut-prank-sound",
+    "storage_bucket": "haircut-prank-sound.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825311866885:android:245e00400681afb89e2c6c",
+        "android_client_info": {
+          "package_name": "com.pranksounds.animalsound.funnysound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825311866885-gp5dv0o8kl76mh0reslkm2ignbs25s2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhuvWcv1GxZL6TfmNASegwHZ4FK067cXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825311866885-gp5dv0o8kl76mh0reslkm2ignbs25s2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
